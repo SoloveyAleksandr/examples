@@ -1,0 +1,737 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="robots" content="index, follow">
+    <meta name="description" content="">
+    <title>DEFAULT</title>
+    
+    
+    <!-- fonts -->
+    <!-- <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@800&family=Jost:wght@300;400;600&display=swap"
+      rel="stylesheet"> -->
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.css" />
+    
+    <link rel="stylesheet" href="assets/css/style.min.css">
+    
+    <script async src="https://unpkg.com/es-module-shims@1.6.3/dist/es-module-shims.js"></script>
+    
+    <script type="importmap">
+      {
+        "imports": {
+          "three": "https://unpkg.com/three@0.154.0/build/three.module.js",
+          "three/addons/": "https://unpkg.com/three@0.154.0/examples/jsm/"
+        }
+      }
+    </script></head>
+
+<body>
+    <svg style="display: none;">
+    
+        <symbol id="arrow-icon" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M16.666 10L3.33288 10" stroke-width="1.5" stroke-linecap="square" />
+            <path d="M11.9492 14.7167C11.9492 12.2919 14.0847 10 16.6659 10" stroke-width="1.5" stroke-linecap="square" />
+            <path d="M11.9492 5.28329C11.9492 7.70808 14.0847 10 16.6659 10" stroke-width="1.5" stroke-linecap="square" />
+        </symbol>
+    
+        <symbol id="play-icon" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+            <path
+                d="M6.06218 5.23205C6.06218 4.46225 6.89551 3.98113 7.56218 4.36603L15.0622 8.69615C15.7288 9.08105 15.7288 10.0433 15.0622 10.4282L7.56218 14.7583C6.89551 15.1432 6.06218 14.6621 6.06218 13.8923L6.06218 5.23205Z" />
+        </symbol>
+    
+        <symbol id="menu-close-icon" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
+            <rect x="6.42867" y="5" width="40.4061" height="2.02031" transform="rotate(45 6.42867 5)" />
+            <rect x="35" y="6.42857" width="40.4061" height="2.02031" transform="rotate(135 35 6.42857)" />
+        </symbol>
+    
+        <symbol id="menu-burger-icon" viewBox="0 0 40 35" xmlns="http://www.w3.org/2000/svg">
+            <rect y="5" width="40" height="2" />
+            <rect y="11" width="40" height="2" />
+            <rect y="17" width="40" height="2" />
+        </symbol>
+    
+        <symbol id="file-icon" viewBox="0 0 20 21" xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd" clip-rule="evenodd"
+                d="M17.5 9.66699V11.3337C17.5 14.4584 17.5 16.0208 16.7042 17.1161C16.4472 17.4698 16.1362 17.7809 15.7824 18.0379C14.6872 18.8337 13.1248 18.8337 10 18.8337C6.87522 18.8337 5.31284 18.8337 4.21756 18.0379C3.86383 17.7809 3.55276 17.4698 3.29576 17.1161C2.5 16.0208 2.5 14.4584 2.5 11.3337V9.66699C2.5 8.96787 2.5 8.34696 2.50891 7.79199L2.56735 7.792C3.27736 7.79205 3.70985 7.79209 4.08291 7.733C6.13323 7.40826 7.74127 5.80023 8.06601 3.74991C8.12509 3.37684 8.12506 2.94436 8.125 2.23434L8.125 2.1759C8.67997 2.16699 9.30088 2.16699 10 2.16699C13.1248 2.16699 14.6872 2.16699 15.7824 2.96275C16.1362 3.21975 16.4472 3.53083 16.7042 3.88455C17.5 4.97983 17.5 6.54222 17.5 9.66699ZM10.625 8.00033C10.625 7.65515 10.3452 7.37533 10 7.37533C9.65482 7.37533 9.375 7.65515 9.375 8.00033V13.7805C9.36315 13.7713 9.35107 13.7617 9.33874 13.7518C9.06989 13.5359 8.75027 13.2148 8.27545 12.7357L7.11058 11.5604C6.86759 11.3152 6.47187 11.3134 6.2267 11.5564C5.98154 11.7994 5.97977 12.1951 6.22276 12.4403L7.41303 13.6412C7.85586 14.0881 8.22518 14.4607 8.55604 14.7264C8.90306 15.0051 9.26776 15.2171 9.71209 15.2737C9.90326 15.2981 10.0967 15.2981 10.2879 15.2737C10.7322 15.2171 11.0969 15.0051 11.444 14.7264C11.7748 14.4607 12.1441 14.0881 12.5869 13.6413L13.7772 12.4403C14.0202 12.1951 14.0185 11.7994 13.7733 11.5564C13.5281 11.3134 13.1324 11.3152 12.8894 11.5604L11.7246 12.7357C11.2497 13.2148 10.9301 13.5359 10.6613 13.7518C10.6489 13.7617 10.6368 13.7713 10.625 13.7805V8.00033Z" />
+            <path
+                d="M3.88737 6.49839C3.63038 6.53909 3.31306 6.54188 2.55445 6.54199C2.63312 5.3423 2.82547 4.53185 3.29576 3.88455C3.55276 3.53083 3.86383 3.21975 4.21756 2.96275C4.86486 2.49246 5.67531 2.30011 6.875 2.22144C6.87489 2.98006 6.8721 3.29737 6.8314 3.55436C6.59137 5.06982 5.40282 6.25836 3.88737 6.49839Z" />
+        </symbol>
+    
+        <symbol id="map-icon" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd" clip-rule="evenodd"
+                d="M29.5616 39.401C34.1811 33.5102 40 24.9518 40 19.2174C40 9.70849 32.8366 2 24 2C15.1634 2 8 9.70849 8 19.2174C8 24.9518 13.8189 33.5102 18.4384 39.401C20.8485 42.4743 22.0535 44.0109 24 44.0109C25.9465 44.0109 27.1515 42.4743 29.5616 39.401ZM24 26C20.6863 26 18 23.3137 18 20C18 16.6863 20.6863 14 24 14C27.3137 14 30 16.6863 30 20C30 23.3137 27.3137 26 24 26Z" />
+        </symbol>
+    
+        <symbol id="drop-icon" viewBox="0 0 10 8" xmlns="http://www.w3.org/2000/svg">
+            <path d="M5 7.5L0.669873 -8.15666e-07L9.33013 -5.85621e-08L5 7.5Z" />
+        </symbol>
+    
+        <symbol id="pinterest-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path
+                d="M7.99995 14.5C4.99995 10 9.46195 6.5 12.5 6.5C15.538 6.5 18 8.154 18 12C18 15.038 16 17 14 17C12 17 11 15 11.5 12M12 10L8.99995 21.5"
+                stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+            <path d="M12 22C17.523 22 22 17.523 22 12C22 6.477 17.523 2 12 2C6.477 2 2 6.477 2 12C2 17.523 6.477 22 12 22Z"
+                stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+        </symbol>
+    
+        <symbol id="twitter-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path
+                d="M23 3.01006C23 3.01006 20.982 4.20206 19.86 4.54006C19.2577 3.84757 18.4573 3.35675 17.567 3.13398C16.6767 2.91122 15.7395 2.96725 14.8821 3.29451C14.0247 3.62177 13.2884 4.20446 12.773 4.96377C12.2575 5.72309 11.9877 6.62239 12 7.54006V8.54006C10.2426 8.58562 8.50127 8.19587 6.93101 7.4055C5.36074 6.61513 4.01032 5.44869 3 4.01006C3 4.01006 -1 13.0101 8 17.0101C5.94053 18.408 3.48716 19.109 1 19.0101C10 24.0101 21 19.0101 21 7.51006C21 7.23206 20.972 6.95406 20.92 6.68006C21.94 5.67406 23 3.01006 23 3.01006Z"
+                stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+        </symbol>
+    
+        <symbol id="facebook-icon" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path
+                d="M22.75 8.66667V17.3333C22.75 18.7699 22.1793 20.1477 21.1635 21.1635C20.1477 22.1793 18.7699 22.75 17.3333 22.75H8.66667C7.23008 22.75 5.85233 22.1793 4.8365 21.1635C3.82068 20.1477 3.25 18.7699 3.25 17.3333V8.66667C3.25 7.23008 3.82068 5.85233 4.8365 4.8365C5.85233 3.82068 7.23008 3.25 8.66667 3.25H17.3333C18.7699 3.25 20.1477 3.82068 21.1635 4.8365C22.1793 5.85233 22.75 7.23008 22.75 8.66667Z"
+                stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+            <path d="M11.9167 22.75V13C11.9167 10.6296 12.4583 8.66663 16.25 8.66663M9.75 14.0833H16.25" stroke-width="1.5"
+                stroke-linecap="round" stroke-linejoin="round" />
+        </symbol>
+    
+        <symbol id="link-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M14.99 17.5H16.5C19.52 17.5 22 15.03 22 12C22 8.98 19.53 6.5 16.5 6.5H14.99" stroke-width="1.5"
+                stroke-linecap="round" stroke-linejoin="round" />
+            <path d="M9 6.5H7.5C4.47 6.5 2 8.97 2 12C2 15.02 4.47 17.5 7.5 17.5H9" stroke-width="1.5" stroke-linecap="round"
+                stroke-linejoin="round" />
+            <path d="M8 12H16" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+        </symbol>
+    
+    </svg>
+    <div class="loader">
+      <div class="loader__info">
+        <span class="loader__percent">0</span>
+        <div class="loader-fill-wrapper">
+          <div class="loader-fill"></div>
+        </div>
+      </div>
+    </div>
+    <div class="cookies" data-cookies>
+      <div class="cookies__text">
+        <p>
+          This website uses cookies and similar technologies to understand how you use our website, to create a better
+          experience for you. Please see our Cookies Notice to learn more about the cookies used and how to change current
+          settings if you do not agree. By using this website, you consent to our use of cookies and similar technologies,
+          as
+          described in our <a href="#">Cookie Notice</a>.
+        </p>
+      </div>
+      <div class="cookies__text cookies__text_mob">
+        <p>
+          By using this website, you consent to our use of cookies and similar technologies, as described in our
+          <a href="#">Cookie Notice</a>.
+        </p>
+      </div>
+      <div class="cookies__btns">
+        <button type="button" class="cookies__btn">Accept</button>
+        <button type="button" class="cookies__btn cookies__btn_dark">Decline</button>
+      </div>
+    </div>
+    <div class="page">
+
+        <header class="header">
+          <div class="container header__container">
+        
+            <div class="header-anim">
+              <a href="#" class="header__logo">sol.agancy</a>
+            </div>
+        
+            <div class="header-nav">
+              <div class="header-anim">
+                <a href="#" class="header-nav__link" data-hover-link>
+                  <span>Works</span>
+                  <span>Works</span>
+                </a>
+              </div>
+              <div class="header-anim">
+                <a href="#" class="header-nav__link" data-hover-link>
+                  <span>Service</span>
+                  <span>Service</span>
+                </a>
+              </div>
+              <div class="header-anim">
+                <a href="#" class="header-nav__link" data-hover-link>
+                  <span>Agancy</span>
+                  <span>Agancy</span>
+                </a>
+              </div>
+              <div class="header-anim">
+                <a href="#" class="header-nav__link" data-hover-link>
+                  <span>Career</span>
+                  <span>Career</span>
+                </a>
+              </div>
+              <div class="header-anim">
+                <a href="#" class="header-nav__link" data-hover-link>
+                  <span>Media</span>
+                  <span>Media</span>
+                </a>
+              </div>
+              <div class="header-anim">
+                <a href="#" class="header-nav__link" data-hover-link>
+                  <span>Contacts</span>
+                  <span>Contacts</span>
+                </a>
+              </div>
+            </div>
+        
+            <div class="header__inner">
+              <div class="header-anim">
+                <a href="#" class="header__loc" data-hover-link>
+                  <span>Polska</span>
+                  <span>Polska</span>
+                </a>
+              </div>
+        
+              <div class="header-anim">
+                <button type="button" class="header__feedback" data-hover-link>
+                  <span class="default-btn">
+                    Get in touch
+                    <svg>
+                      <use href="#arrow-icon"></use>
+                    </svg>
+                  </span>
+                  <span class="default-btn">
+                    Get in touch
+                    <svg>
+                      <use href="#arrow-icon"></use>
+                    </svg>
+                  </span>
+                </button>
+              </div>
+            </div>
+        
+            <button type="button" class="header-btn">
+              <svg>
+                <use href="#menu-burger-icon"></use>
+              </svg>
+              <svg>
+                <use href="#menu-close-icon"></use>
+              </svg>
+            </button>
+        
+          </div>
+        
+          <nav class="menu">
+            <div class="menu__nav">
+            </div>
+          
+            <div class="menu__info">
+              <div class="menu__links">
+                <a href="#" class="menu__link" data-hover-link>
+                  <span>+48 793 668 180</span>
+                  <span>+48 793 668 180</span>
+                </a>
+                <a href="#" class="menu__link" data-hover-link>
+                  <span>agencysol@gmail.com</span>
+                  <span>agencysol@gmail.com</span>
+                </a>
+              </div>
+          
+              <a href="#" class="menu__loc" data-hover-link>
+                <span>Polska</span>
+                <span>Polska</span>
+              </a>
+          
+              <p class="menu__legal">Copyright © 2023 Sol.agancy </p>
+            </div>
+          </nav></header>
+        <section class="main">
+          <div class="container">
+        
+            <div class="page-head">
+              <h1 class="page-head__title">Digital Marketing</h1>
+        
+              <div class="swiper page-head-tag">
+                <div class="swiper-wrapper">
+                  <div class="swiper-slide">
+                    <h4 class="default-tag">Design</h4>
+                  </div>
+                  <div class="swiper-slide">
+                    <h4 class="default-tag">Strategy</h4>
+                  </div>
+                  <div class="swiper-slide">
+                    <h4 class="default-tag">Development</h4>
+                  </div>
+                  <div class="swiper-slide">
+                    <h4 class="default-tag">Marketing</h4>
+                  </div>
+                  <div class="swiper-slide">
+                    <h4 class="default-tag">Strategy</h4>
+                  </div>
+                  <div class="swiper-slide">
+                    <h4 class="default-tag">Production</h4>
+                  </div>
+                </div>
+              </div>
+        
+              <div class="page-head__img" data-contain>
+                <img src="./assets/images/main-top-1.png">
+              </div>
+            </div>
+        
+            <div class="main-projects">
+              <div class="main-projects__text">
+                <p>
+                  Each project is an individual story, the main goal - to solve your business problems at the highest level.
+                </p>
+              </div>
+        
+              <div class="swiper main-projects__swiper">
+                <div class="swiper-wrapper">
+                  <div class="swiper-slide">
+                    <a href="#" class="main-projects-item">
+                      <div class="main-projects-item__head">
+                        <h4 class="main-projects-item__title">Ravent booking</h4>
+                        <p class="main-projects-item__description">entertainment</p>
+                      </div>
+                      <div class="main-projects-item__img">
+                        <img src="./assets/images/main-projects-1.jpg" alt="">
+                      </div>
+                    </a>
+                  </div>
+                  <div class="swiper-slide">
+                    <a href="#" class="main-projects-item">
+                      <div class="main-projects-item__head">
+                        <h4 class="main-projects-item__title">Ravent booking</h4>
+                        <p class="main-projects-item__description">entertainment</p>
+                      </div>
+                      <div class="main-projects-item__img">
+                        <img src="./assets/images/main-projects-2.jpg" alt="">
+                      </div>
+                    </a>
+                  </div>
+                  <div class="swiper-slide">
+                    <a href="#" class="main-projects-item">
+                      <div class="main-projects-item__head">
+                        <h4 class="main-projects-item__title">Ravent booking</h4>
+                        <p class="main-projects-item__description">entertainment</p>
+                      </div>
+                      <div class="main-projects-item__img">
+                        <img src="./assets/images/main-projects-3.jpg" alt="">
+                      </div>
+                    </a>
+                  </div>
+                  <div class="swiper-slide">
+                    <a href="#" class="main-projects-item">
+                      <div class="main-projects-item__head">
+                        <h4 class="main-projects-item__title">Ravent booking</h4>
+                        <p class="main-projects-item__description">entertainment</p>
+                      </div>
+                      <div class="main-projects-item__img">
+                        <img src="./assets/images/main-projects-1.jpg" alt="">
+                      </div>
+                    </a>
+                  </div>
+                  <div class="swiper-slide">
+                    <a href="#" class="main-projects-item">
+                      <div class="main-projects-item__head">
+                        <h4 class="main-projects-item__title">Ravent booking</h4>
+                        <p class="main-projects-item__description">entertainment</p>
+                      </div>
+                      <div class="main-projects-item__img">
+                        <img src="./assets/images/main-projects-2.jpg" alt="">
+                      </div>
+                    </a>
+                  </div>
+                  <div class="swiper-slide">
+                    <a href="#" class="main-projects-item">
+                      <div class="main-projects-item__head">
+                        <h4 class="main-projects-item__title">Ravent booking</h4>
+                        <p class="main-projects-item__description">entertainment</p>
+                      </div>
+                      <div class="main-projects-item__img">
+                        <img src="./assets/images/main-projects-3.jpg" alt="">
+                      </div>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+        
+            <div class="main-service">
+              <div class="main-service__description">
+                <p>
+                  Our team is ready to take on challenges in the following specializations
+                </p>
+              </div>
+        
+              <div class="swiper main-service__swiper">
+                <div class="swiper-wrapper">
+                  <div class="swiper-slide">
+                    <a href="#" class="main-service-item">
+                      <h4 class="main-service-item__title">Development</h4>
+                      <div class="main-service-item__labels">
+                        <h6 class="main-service-item__label">Website and system</h6>
+                        <h6 class="main-service-item__label">Frontend</h6>
+                        <h6 class="main-service-item__label">Backend</h6>
+                        <h6 class="main-service-item__label">Support</h6>
+                      </div>
+                      <div class="main-service-item__icon">
+                        <div class="cursor-info">
+                          <svg>
+                            <use href="#play-icon"></use>
+                          </svg>
+                          <div class="cursor-info__inner">
+                            Learn more
+                          </div>
+                        </div>
+                      </div>
+                    </a>
+                  </div>
+                  <div class="swiper-slide">
+                    <a href="#" class="main-service-item">
+                      <h4 class="main-service-item__title">Development</h4>
+                      <div class="main-service-item__labels">
+                        <h6 class="main-service-item__label">Website and system</h6>
+                        <h6 class="main-service-item__label">Frontend</h6>
+                        <h6 class="main-service-item__label">Backend</h6>
+                        <h6 class="main-service-item__label">Support</h6>
+                      </div>
+                      <div class="main-service-item__icon">
+                        <div class="cursor-info">
+                          <svg>
+                            <use href="#play-icon"></use>
+                          </svg>
+                          <div class="cursor-info__inner">
+                            Learn more
+                          </div>
+                        </div>
+                      </div>
+                    </a>
+                  </div>
+                  <div class="swiper-slide">
+                    <a href="#" class="main-service-item">
+                      <h4 class="main-service-item__title">Development</h4>
+                      <div class="main-service-item__labels">
+                        <h6 class="main-service-item__label">Website and system</h6>
+                        <h6 class="main-service-item__label">Frontend</h6>
+                        <h6 class="main-service-item__label">Backend</h6>
+                        <h6 class="main-service-item__label">Support</h6>
+                      </div>
+                      <div class="main-service-item__icon">
+                        <div class="cursor-info">
+                          <svg>
+                            <use href="#play-icon"></use>
+                          </svg>
+                          <div class="cursor-info__inner">
+                            Learn more
+                          </div>
+                        </div>
+                      </div>
+                    </a>
+                  </div>
+                  <div class="swiper-slide">
+                    <a href="#" class="main-service-item">
+                      <h4 class="main-service-item__title">Development</h4>
+                      <div class="main-service-item__labels">
+                        <h6 class="main-service-item__label">Website and system</h6>
+                        <h6 class="main-service-item__label">Frontend</h6>
+                        <h6 class="main-service-item__label">Backend</h6>
+                        <h6 class="main-service-item__label">Support</h6>
+                      </div>
+                      <div class="main-service-item__icon">
+                        <div class="cursor-info">
+                          <svg>
+                            <use href="#play-icon"></use>
+                          </svg>
+                          <div class="cursor-info__inner">
+                            Learn more
+                          </div>
+                        </div>
+                      </div>
+                    </a>
+                  </div>
+                  <div class="swiper-slide">
+                    <a href="#" class="main-service-item">
+                      <h4 class="main-service-item__title">Development</h4>
+                      <div class="main-service-item__labels">
+                        <h6 class="main-service-item__label">Website and system</h6>
+                        <h6 class="main-service-item__label">Frontend</h6>
+                        <h6 class="main-service-item__label">Backend</h6>
+                        <h6 class="main-service-item__label">Support</h6>
+                      </div>
+                      <div class="main-service-item__icon">
+                        <div class="cursor-info">
+                          <svg>
+                            <use href="#play-icon"></use>
+                          </svg>
+                          <div class="cursor-info__inner">
+                            Learn more
+                          </div>
+                        </div>
+                      </div>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+        
+            <div class="main-apporch">
+              <h3 class="main-apporch__title">Apporch</h3>
+        
+              <div class="main-apporch-description">
+                <h6 class="main-apporch-description__item">Building a transparent work process</h6>
+                <h6 class="main-apporch-description__item">Diving into your business</h6>
+                <h6 class="main-apporch-description__item">Handing over the finished product</h6>
+              </div>
+        
+              <div class="main-apporch__container">
+                <div class="main-apporch__inner">
+                  <div class="main-apporch__main">
+                    <div class="main-apporch__anim">
+                      <h4 class="main-apporch__subtitle">Develop and support</h4>
+                    </div>
+                    <div class="main-apporch__text">
+                      <p>
+                        We're a full-service digital agency specializing in web/app development, CRM systems, market analysis,
+                        product launches, promotion, advertising, commercial shoots, and branding. Our talented team crafts
+                        engaging digital experiences and helps your brand succeed in new markets.
+                      </p>
+                    </div>
+                  </div>
+        
+                  <div class="main-apporch-info">
+                    <div class="main-apporch__anim">
+                      <div class="main-apporch-info__item">
+                        <h4 class="main-apporch__subtitle">Flexible payment system</h4>
+                        <div class="main-apporch-info__inner">
+                          <h6 class="main-apporch-info__title">Milestone</h6>
+                          <h6 class="main-apporch-info__title">Time&Material</h6>
+                          <h6 class="main-apporch-info__title">Fixed Price</h6>
+                          <h6 class="main-apporch-info__title">Retainer</h6>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="main-apporch__anim">
+                      <div class="main-apporch-info__item">
+                        <h4 class="main-apporch__subtitle">Project management methods</h4>
+                        <div class="main-apporch-info__inner">
+                          <h6 class="main-apporch-info__title">Agile</h6>
+                          <h6 class="main-apporch-info__title">Scrum</h6>
+                          <h6 class="main-apporch-info__title">Kanban</h6>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+        
+                <div class="main-apporch-link">
+                  <a href="#" class="main-apporch__link" data-hover-link>
+                    <span class="default-btn">
+                      Let's make your vision a reality
+                      <svg>
+                        <use href="#arrow-icon"></use>
+                      </svg>
+                    </span>
+                    <span class="default-btn">
+                      Let's make your vision a reality
+                      <svg>
+                        <use href="#arrow-icon"></use>
+                      </svg>
+                    </span>
+                  </a>
+                </div>
+              </div>
+            </div>
+        
+          </div>
+        
+          <div class="main-about">
+            <div class="main-about__img">
+              <img src="./assets/images/main-about-1.jpg" alt="">
+            </div>
+        
+            <a href="#" class="main-about__link">
+              <span>About us</span>
+            </a>
+          </div>
+        
+          <div class="container">
+        
+            <div class="main-media">
+              <div class="main-media__anim">
+                <h3 class="main-media__title">Media</h3>
+              </div>
+        
+              <div class="main-media__container">
+                <div class="main-media__anim main-media-type__wrapper">
+                  <div class="swiper main-media-type">
+                    <div class="swiper-wrapper"></div>
+                  </div>
+                </div>
+        
+                <div class="main-media-items">
+                  <div class="main-media__anim">
+                    <div class="main-media-item">
+                      <a href="#" target="_blank" class="main-media-item__btn">
+                        Lamborghini celebrates 60 years with limited edition huracán models
+                      </a>
+                      <!-- <template class="main-media-item__template"> -->
+                      <div class="swiper-slide main-media-type__item">
+                        <h6 class="main-media-type__title">Design</h6>
+                      </div>
+                      <a href="#" target="_blank" class="swiper-slide main-media-images__item">
+                        <img src="./assets/images/main-media-1.jpg" alt="">
+                      </a>
+                      <div class="swiper-slide main-media-date__item">
+                        22 September 2023
+                      </div>
+                      <!-- </template> -->
+                    </div>
+                  </div>
+                  <div class="main-media__anim">
+                    <div class="main-media-item">
+                      <a href="#" target="_blank" class="main-media-item__btn">
+                        Biltmore estate in photos: a visual journey through america’s largest private residence
+                      </a>
+                      <!-- <template class="main-media-item__template"> -->
+                      <div class="swiper-slide main-media-type__item">
+                        <h6 class="main-media-type__title">Business</h6>
+                      </div>
+                      <a href="#" target="_blank" class="swiper-slide main-media-images__item">
+                        <img src="./assets/images/main-media-2.jpg" alt="">
+                      </a>
+                      <div class="swiper-slide main-media-date__item">
+                        21 September 2023
+                      </div>
+                      <!-- </template> -->
+                    </div>
+                  </div>
+                  <div class="main-media__anim">
+                    <div class="main-media-item">
+                      <a href="#" target="_blank" class="main-media-item__btn">
+                        15 most expensive luxury yachts in the world for 2023
+                      </a>
+                      <!-- <template class="main-media-item__template"> -->
+                      <div class="swiper-slide main-media-type__item">
+                        <h6 class="main-media-type__title">Tech</h6>
+                      </div>
+                      <a href="#" target="_blank" class="swiper-slide main-media-images__item">
+                        <img src="./assets/images/main-media-3.jpg" alt="">
+                      </a>
+                      <div class="swiper-slide main-media-date__item">
+                        20 September 2023
+                      </div>
+                      <!-- </template> -->
+                    </div>
+                  </div>
+                </div>
+        
+                <div class="main-media__anim main-media-images__wrapper">
+                  <div class="swiper main-media-images">
+                    <div class="swiper-wrapper"></div>
+                  </div>
+                </div>
+        
+                <div class="main-media__anim main-media-date__wrapper">
+                  <div class="swiper main-media-date">
+                    <div class="swiper-wrapper"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+        
+          </div>
+        
+        </section>
+        <footer class="footer">
+          <div class="container footer__container">
+        
+            <h3 class="footer__title">We are open to your suggestions.</h3>
+        
+            <div class="footer__inner">
+              <div class="footer-item">
+                <a href="#" class="footer-item-link">
+                  <span class="footer-item-link__text">Schedule a Call</span>
+                </a>
+              </div>
+              <div class="footer-item">
+                <a href="#" class="footer-item-link">
+                  <span class="footer-item-link__text">Get in touch</span>
+                </a>
+              </div>
+              <div class="footer-item">
+                <div class="footer-item-contacts">
+                  <a href="tel:+48793668180" class="footer-item-contacts__link" data-hover-link>
+                    <span>+48 793 668 180</span>
+                    <span>+48 793 668 180</span>
+                  </a>
+                  <a href="mailto:agencysol@gmail.com" class="footer-item-contacts__link" data-hover-link>
+                    <span>agencysol@gmail.com</span>
+                    <span>agencysol@gmail.com</span>
+                  </a>
+                </div>
+              </div>
+              <div class="footer-item">
+                <div class="footer-item-info">
+                  <h4 class="footer-item-info__title">Office</h4>
+                  <p class="footer-item-info__text">1740 Broadway, New York City 10019, United States</p>
+                  <p class="footer-item-info__text">Work time: 09am - 6pm</p>
+                </div>
+              </div>
+            </div>
+        
+            <div class="footer-legal">
+              <p class="footer-legal__text">Copyright © 2023 Sol agancy.NYC LLC</p>
+        
+              <div class="footer-legal__nav">
+                <a href="#" class="footer-legal__link" data-hover-link>
+                  <span>Instagram</span>
+                  <span>Instagram</span>
+                </a>
+                <a href="#" class="footer-legal__link" data-hover-link>
+                  <span>Facebook</span>
+                  <span>Facebook</span>
+                </a>
+                <a href="#" class="footer-legal__link" data-hover-link>
+                  <span>Behance</span>
+                  <span>Behance</span>
+                </a>
+                <a href="#" class="footer-legal__link" data-hover-link>
+                  <span>Dribbble</span>
+                  <span>Dribbble</span>
+                </a>
+                <a href="#" class="footer-legal__link" data-hover-link>
+                  <span>Linkedin</span>
+                  <span>Linkedin</span>
+                </a>
+              </div>
+        
+              <div class="footer-legal__info">
+                <p class="footer-legal__text">Relivent Sp. z o. o.</p>
+                <p class="footer-legal__text">VAT: 5252837088</p>
+                <p class="footer-legal__text">Registred in Warsaw, Poland</p>
+              </div>
+            </div>
+        
+          </div>
+        </footer>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/smoothscroll/1.4.10/SmoothScroll.min.js"
+        integrity="sha256-huW7yWl7tNfP7lGk46XE+Sp0nCotjzYodhVKlwaNeco=" crossorigin="anonymous"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/ScrollTrigger.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/ScrollToPlugin.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/parallax/3.1.0/parallax.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.umd.js"></script>
+
+    <script type="module" src="assets/js/app.js"></script>
+
+</body>
+
+</html>
